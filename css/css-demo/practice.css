@@ -9,4 +9,10 @@
 }
 .lists{
     font-size: .8em;
+  }
+.work:only-child {
+  color: red;
+}
+ul > li {
+  color: red;
 }
