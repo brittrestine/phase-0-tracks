@@ -1,7 +1,18 @@
+    #Algorithm for a Robot using an elevator
 -Press button by the elevator to call it to your floor
-  -Walk in to elevator when doors open and face the doors you just walked in from
-  -wait till the doors close
-    -By the doors there are buttoms with numbers on them, representing all the floors in the building
-    -press the number for the floor you want to go to
-  -The doors will open when the desired floor is reached
-  -walk out of the elevator and you are on the desired floor
+-Walk in to elevator when doors open and face the doors you just walked in from
+-wait till the doors close
+  -By the doors there are buttoms with numbers on them, representing all the floors in the building, press the number for the floor you want to go to
+-The doors will open when the desired floor is reached
+-walk out of the elevator and you are on the desired floor
+
+    #Algorithm for making coffee
+-Fill water boiler with water
+-Turn on burner for water boiler to start boiling water
+-Select a coffee
+-Put filter in a melitta and place over a coffee cup
+-Add 3 tablespoons of coffee to filter
+-when water boiler whistles, take it off the hot burner
+-Wait a minute before pouring water
+  -pour water out of water boiler over melitta filter with coffee in it until desired amount is reached
+  -drink coffee, caution will be HOT!
