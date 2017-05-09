@@ -6,7 +6,7 @@
 -The doors will open when the desired floor is reached
 -walk out of the elevator and you are on the desired floor
 
-    #Algorithm for making coffee
+    #Algorithm for making a cup of coffee
 -Fill water boiler with water
 -Turn on burner for water boiler to start boiling water
 -Select a coffee
