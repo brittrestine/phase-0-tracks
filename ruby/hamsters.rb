@@ -28,18 +28,19 @@ else input4 == "nil"
   input4 = "not sure if it is a good candidate for adoption"
 end
 
-puts "what is the estimated age of the hamster?(1, 2, 3 or N/A)"
-input5 = gets.to_i
+puts "what is the estimated age of the hamster?(1, 2, 3 or n/a)"
+input5 = gets.to_f
 
-if input5 == 1
-  input5 = "1 year old"
-elsif input5 == 2
-  input5 = "2 years old"
-elsif input5 == 3
-  input5 = "3 years old"
-else input5 == "nil"
-  input5 = "unsure of its age"
+if input5 == 0 || nil
+  input5 = "unsure of it's age"
+elsif input5 <= 1
+  input5 = "0 to 1 years old"
+elsif input5 <= 2
+  input5 = "1 to 2 years old"
+elsif input5 <= 3
+  input5 = "2 to 3 years old"
 end
+
 
 
 
