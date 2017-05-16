@@ -33,19 +33,19 @@ designer_info[:plants] = plants
 
 puts "Anything you would to update?(none to exit)"
 update = gets.chomp
-if update == "name"
+if update == ":name"
  puts "update to"
  name_update = gets.chomp
  designer_info[:name] = name_update
-elsif update == "decor theme"
+elsif update == ":decor_theme"
   puts "update to"
   decor_theme_update = gets.chomp
   designer_info[:decor_theme] = decor_theme_update
-elsif update == "favorite color"
+elsif update == ":fav_color"
   puts "update to"
   fav_color_update = gets.chomp
   designer_info[:fav_color] = fav_color_update
-elsif update == "plants"
+elsif update == ":plants"
   puts "update to"
   plants_update = gets.chomp
   designer_info[:plants] = plants_update
