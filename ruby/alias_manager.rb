@@ -11,9 +11,9 @@
 
 =end
 
-=begin
 
-def alias_manager(name)
+def alias_manager(first_name, last_name)
+  name = (last_name + first_name)
   name = name.downcase
   index = 0
   alphabet = "bcdfghjklmnpqrstvwqyz"
@@ -24,39 +24,29 @@ def alias_manager(name)
      name[index] = new_letter
    else index_of_letter = alphabet.index(name[index])
       new_letter = alphabet[index_of_letter + 1]
-      name[index] = new_letter
+      name[index]= new_letter
     end
     index += 1
   end
-  name
+  puts name.capitalize
 end
 
-puts alias_manager("FeliciaTorres")
-=end
+loop_counter = 0
 
-=begin
-def alias_manager(first_name, last_name)
-  name = (last_name + first_name)
-end
-=end
+loop do
+  puts "To get an alias enter a first name?('quite' when finished)"
+  name_1 = gets.chomp
 
-def alias_manager(first_name, last_name)
-  name_1 = (last_name + first_name)
-  name = name_1.downcase
-  index = 0
-  alphabet = "bcdfghjklmnpqrstvwqyz"
-  vowel = "aeiou"
-  while index < name.length
-    if index_of_letter =  vowel.index(name[index])
-     new_letter = vowel[index_of_letter + 1]
-     name[index] = new_letter
-   else index_of_letter = alphabet.index(name[index])
-      new_letter = alphabet[index_of_letter + 1]
-      name[index] = new_letter
-    end
-    index += 1
+  if name_1 == "quite"
+    puts "Thanks for using alias manager!"
+    break
   end
-  name
+
+  puts "Enter a last name"
+  name_2 = gets.chomp
+
+  loop_counter =+ 1
+
+  puts alias_manager(name_1, name_2)
 end
 
-puts alias_manager("Felicia", "Torres")
