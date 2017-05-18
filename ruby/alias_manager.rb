@@ -27,18 +27,19 @@ def alias_manager(first_name, last_name)
     end
     index += 1
   end
-  name.capitalize
+  name
+  yield(name)# Problem! I want to pass the result of this method to my hash for the value
 end
 
 #user interface
 
-aliass = []
+#aliass = {}#Problem! I really want my data structure to be a hash so it can hold the original 'name' as the key and the 'name_1' as the value. I dont know how to add the value from a method
 
 loop_counter = 0
 loop do
   puts "To get an alias enter a first name?('quit' when finished)"
   name_1 = gets.chomp
-  aliass << name_1
+  #aliass << name_1#Problem I want to pass this to my hash as the key
 
 
   if name_1 == "quit"
@@ -48,14 +49,13 @@ loop do
 
   puts "Enter a last name"
   name_2 = gets.chomp
-  aliass << name_2
+  #aliass << name_2#Problem I want to pass this to my hash as the key
 
   loop_counter =+ 1
 
-  puts alias_manager(name_1, name_2)
+ #Problem! I want this to print outside my loop so it doesn't print after you enter a name, but if I copy and paste this outside the loop it cant find the 'name' variale. The block wont be necessary if I could pass the value to the hash
+puts alias_manager(name_1, name_2) { |name| puts "#{name.capitalize} is actually #{name_1.capitalize} #{name_2.capitalize}"}
 
 end
-
-aliass.each { |name_1| puts "#{name_1} is actually name" }
 
 
