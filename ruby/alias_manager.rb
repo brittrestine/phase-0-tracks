@@ -11,7 +11,6 @@
 
 =end
 
-
 def alias_manager(first_name, last_name)
   name = (last_name + first_name)
   name = name.downcase
@@ -28,25 +27,35 @@ def alias_manager(first_name, last_name)
     end
     index += 1
   end
-  puts name.capitalize
+  name.capitalize
 end
 
+#user interface
+
+aliass = []
+
 loop_counter = 0
-
 loop do
-  puts "To get an alias enter a first name?('quite' when finished)"
+  puts "To get an alias enter a first name?('quit' when finished)"
   name_1 = gets.chomp
+  aliass << name_1
 
-  if name_1 == "quite"
+
+  if name_1 == "quit"
     puts "Thanks for using alias manager!"
     break
   end
 
   puts "Enter a last name"
   name_2 = gets.chomp
+  aliass << name_2
 
   loop_counter =+ 1
 
   puts alias_manager(name_1, name_2)
+
 end
+
+aliass.each { |name_1| puts "#{name_1} is actually name" }
+
 
