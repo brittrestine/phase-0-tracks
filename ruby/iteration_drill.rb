@@ -6,12 +6,15 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
 # ----
-=begin
+
 zombie_apocalypse_supplies.each { |supplies| puts "*#{supplies}" }
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----
+zombie_apocalypse_supplies.map! do |type|
+  type.upcase.downcase
+end
 
 zombie_apocalypse_supplies.each_index do |supplies_one|
   zombie_apocalypse_supplies.each_index do |supplies_two|
@@ -64,7 +67,7 @@ other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
 new_zombie_apocalypse_supplies = (zombie_apocalypse_supplies.push + other_survivor_supplies.push)
 new_zombie_apocalypse_supplies = new_zombie_apocalypse_supplies.uniq
 p new_zombie_apocalypse_supplies
-=end
+
 
 # Hash Drills
 
@@ -81,7 +84,7 @@ extinct_animals = {
 # 1. Iterate through extinct_animals hash, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
 # ----
-=begin
+
 extinct_animals.each do |animal, year|
   print "#{animal} - #{year} * "
 end
@@ -135,21 +138,13 @@ def in_extinct_animals(extinct_animals, a, b, c)
 end
 
 in_extinct_animals(extinct_animals, "Andean Cat", "Dodo", "Saiga Antelope")
-=end
+
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
 # ----
 
-not_extinct = []
-
-not_extinct.push(extinct_animals.key(1914))
-not_extinct.push(extinct_animals["Passenger Pigeon"])
-
-p not_extinct
-
-
+p extinct_animals.to_a.at(4)
 extinct_animals.delete("Passenger Pigeon")
-
 p extinct_animals
