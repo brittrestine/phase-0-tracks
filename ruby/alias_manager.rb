@@ -18,10 +18,9 @@ def alias_manager(name)
   index = 0
   consonant = "bcdfghjklmnpqrstvwqyz"
   vowel = "aeiou"
-   while index < name.length
+  while index < name.length
     if
       !consonant.index(name[index]) && !vowel.index(name[index])
-
     elsif
       index_of_letter =  vowel.index(name[index])
       new_letter = vowel[index_of_letter + 1]
