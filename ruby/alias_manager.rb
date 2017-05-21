@@ -42,7 +42,7 @@ name_catcher = {}
 loop_counter = 0
 loop do
 
-puts "To get an alias enter with no spaces a name?(write'quit' when finished)"
+puts "To get an alias enter a full name?(write 'quit' when finished)"
   name_1 = gets.chomp
   break if name_1 == "quit"
   name_catcher[name_1]= alias_manager(name_1)
