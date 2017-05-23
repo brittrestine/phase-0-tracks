@@ -1,9 +1,9 @@
 SPECIES ------------------------
-Puppies
+Puppy
 
 CHARACTERISTICS ----------------
 paws: 4
-tale: varies in size
+tail: varies in size
 snout: varies in size
 Friendly: yes
 Name: varies
