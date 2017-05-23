@@ -53,8 +53,8 @@ Augie.stay("stay...........")
 
 class Plants
 
-  def initialize
-    puts "Initializing new plant instance..."
+  def initialize(type)
+    puts "#{type} is growing"
   end
 
   def light(sun)
@@ -67,9 +67,9 @@ class Plants
 
 end
 
-fern = Plants.new
-fern.light("bright, indirect light")
-fern.water(1)
+#type = Plants.new("fern")
+#type.light("bright, indirect light")
+#type.water(1)
 
 plant_arr = []
 
@@ -77,11 +77,13 @@ num = 0
 type_of_plants = 50
 
 while num < type_of_plants
-  new_plants = Plants.new
+  new_plants = Plants.new("fern")
   plant_arr << new_plants
 
   num += 1
 end
+
+p plant_arr
 
 plant_arr.each do |type|
  type.light("bright, indirect light")
