@@ -1,9 +1,11 @@
 class Guess_name_game
+  attr_accessor :word
+  attr_accessor :feedback_str
 
   def initialize(word)
     under_line = "_" + " "
-   @word = word.downcase
-   @feedback_str = under_line * @word.length
+    @word = word.downcase
+    @feedback_str = under_line * @word.length
   end
 
   def letter_guessed(letter)
@@ -18,33 +20,38 @@ class Guess_name_game
       @feedback_str
   end
 
-    def win_or_lose
+  def win_or_lose
       new_word = @word.split("")
       new_word.map! { |char| char + " " }
       new_word = new_word.join("")
       if new_word == @feedback_str
-        puts "\nYAY!!!!!! YOU WON!!!!"
+        return "YAY!!!!!! YOU WON!!!!"
       else
-        puts "\nYou lose sucker!"
+        return "You lose sucker!"
       end
     end
 end
 
-puts "welcome to the guess name game."
+puts "welcome to the guess word game."
 
-puts "\nPlayer 1, input a word"
+=begin ***this is if we wanted it to be all user interface and not being tested
+
+puts "Player 1 enter a word"
 word = gets.chomp
 
-guessing_game = Guess_name_game.new(word)
+=end
 
+guessing_game = Guess_name_game.new("cat")
+puts "Word as been input"
 
 letters = []
 guesses = []
 turns = 0
 
-while turns < word.length
+while turns < guessing_game.word.length
 
-  puts "\nPlayer 2, guess a letter of the hidden word"
+
+  puts "player 2 take a guess"
   letter = gets.chomp
 
   letters.each do |char|
@@ -53,18 +60,19 @@ while turns < word.length
       letter = gets.chomp
     end
   end
+
     letters << letter
 
   guesses << guessing_game.letter_guessed(letter)
 
   puts "You guessed #{guesses.last}"
 
-  if turns == word.length
-    puts "\nOut of turns"
+  if turns == guessing_game.word.length
+    puts "Out of turns"
   end
 
   turns += 1
 end
 
 
-guessing_game.win_or_lose
+p guessing_game.win_or_lose
