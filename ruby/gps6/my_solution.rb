@@ -4,25 +4,27 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+#require_relative is a subset of require.
+#r_r = to the location you are in.
+#r = full address
 require_relative 'state_data'
 
 class VirusPredictor
 
+#Initailizes all the instances
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
-
+#plugs in the correct info for other methods
   def virus_effects
     predicted_deaths(@population_density, @population, @state)
     speed_of_spread(@population_density, @state)
   end
 
   private
-
+#Predictes deaths uses population density to calculate the weight of the float to multiple with population. prints out "#{@state} will lose #{number_of_deaths} people in this outbreak".
   def predicted_deaths(population_density, population, state)
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -40,7 +42,7 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-
+#takes in population density to select the seep the infection will spread. prints " and will spread across the state in #{speed} months.\n\n"
   def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
@@ -69,7 +71,16 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
+STATE_DATA.each do |states, info|
+  new_state = VirusPredictor.new(states, info[:population_density], info[:population] )
+  new_state.virus_effects
+end
 
+
+
+#new_state = VirusPredictor.new(  )
+
+=begin
 alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
 alabama.virus_effects
 
@@ -81,6 +92,7 @@ california.virus_effects
 
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
+=end
 
 
 #=======================================================================
