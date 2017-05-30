@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Gabriel Osborne ].
+# We spent [1.5] hours on this challenge.
 
 # EXPLANATION OF require_relative
 #require_relative is a subset of require.
@@ -97,3 +97,17 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
+=begin
+What are the differences between the two different hash syntaxes shown in the state_data file?
+  The two different syntaxes shown in the state_data are string and rocket syntax for the hashy hash and symbols for the nested hash.
+
+What does require_relative do? How is it different from require?
+  Require_relative is a subset of require. While required_relatice means the location you are in and require is the full address.
+
+What are some ways to iterate through a hash?
+  To iterate through a hash you can call that hash along with a method, such as .each, and go through eash key value parts, effecting them in the way you would like.
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+  The variables had a local scope and could be used anywhere in the program, so to write each variable out as well as pass them as a parameter was over kill.
+What concept did you most solidify in this challenge?
+  How to interate through a hash while passing the key value part to the class. I was comfortable with iteration, but this was a new was to pass the information and I enjoyed learning it.
