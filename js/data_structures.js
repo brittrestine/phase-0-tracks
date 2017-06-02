@@ -15,8 +15,12 @@ color.push("purple");
 var myobj = {};
 
 for (var i = 0; horse.length > i; i++){
-    myobj[horse[i]] = color[i];
+for (var i = 0; color.length > i; i++){
+  var horses = horse[i];
+  var colors = color[i];
+    myobj[horses] = colors;
   }
+}
 
 
 console.log(myobj);
