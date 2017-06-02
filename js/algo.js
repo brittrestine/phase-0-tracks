@@ -5,7 +5,7 @@
   // compare the word lengths of each one
   // the largest word or phrase should be returned
 
-/*
+
 function printlongest(arr){
 
 var lgth = 0;
@@ -20,7 +20,7 @@ for(var i = 0; i < arr.length; i++){
 }
 console.log(longest);
 }
-*/
+
 
 // Pseudocode for compare
 //Create a function that takes in two key-value pairs
@@ -45,6 +45,24 @@ console.log(longest);
     }
 */
 
+// Pseudocode for newarray function
+// Create a function that takes in a integer for the length of the array being built
+  // use that integer to pick random words from a word array
+  // push though random words into an empty array and return that array.
+
+  function newarray(num) {
+
+    var words = ["I", "mouse", "horses", "turtles", "Mr.squirl", "Misslizard", "Brittany", "If"];
+    var pick;
+    var newarray = []
+
+    for (var i = num; i >= 0; i--) {
+      pick = words[Math.floor(Math.random() * words.length)];
+      newarray.push(pick);
+    }
+    return newarray
+  }
+
 //***************driver code**********************
 
 /* printlongest function driver code,
@@ -62,4 +80,8 @@ var britt = {name: "britt", age: 29};
 
 compare(ryan, britt);
 */
+
+// newarray driver code,
+
+printlongest(newarray(2));
 
