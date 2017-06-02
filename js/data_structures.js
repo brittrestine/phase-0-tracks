@@ -34,7 +34,9 @@ function Car(make, year, color) {
   this.year = year;
   this.color = color;
 
-  this.running = function() {console.log("vroom");};
+  this.running = function(str) {
+    console.log(str);
+    console.log("Vroom!!")};
 
   console.log("CAR INITIALIZATION COMPLETE");
 }
@@ -43,20 +45,21 @@ console.log("Lets build a car...");
 var anotherCar = new Car("Valiant", 1968, "tan");
 console.log(anotherCar);
 console.log("This car is running:");
-anotherCar.running();
+var cargo = "GO Go..."
+anotherCar.running(cargo);
 console.log("-------------")
 
 console.log("lets build another car...");
 var yetanotherCar = new Car("Dodge", 2008, "red");
 console.log(yetanotherCar);
 console.log("This car is running:");
-yetanotherCar.running();
+yetanotherCar.running("Yes this car works!!");
 console.log("-------------")
 
 console.log("lets build another car...");
 var yetyetanotherCar = new Car("Volvo", 2001, "gren");
 console.log(yetyetanotherCar);
 console.log("This car is running:");
-yetyetanotherCar.running();
+yetyetanotherCar.running("I love this car!!!!<3");
 console.log("-------------")
 
