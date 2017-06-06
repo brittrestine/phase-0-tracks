@@ -1,0 +1,78 @@
+********************************** Release 2 ******************************************
+
+1. Display the information in one table (either table is fine).
+
+	command: SELECT * FROM plants;
+
+	output: 1|Shamrock|7|true|2
+		2|Monstera|10|true|3
+		3|Fern|11|true|3
+		4|Purple Heart|9|false|1
+		5|Cactus|8|false|1
+
+2.Update an item that meets some condition (you can choose a condition that makes sense).
+
+	command: UPDATE plants SET best_zone = 8 WHERE id = 4;
+
+	output: None, but if I display all the info from plants table you can see the change here: 	1|Shamrock|7|true|2
+		2|Monstera|10|true|3
+		3|Fern|11|true|3
+	      *	4|Purple Heart|8|false|1 *
+		5|Cactus|8|false|1
+
+3.Display the information in both tables using one query.
+
+	command: SELECT * FROM light, plants WHERE light.id = plants.light_preference_id;
+
+	output: 2|Partly Sunny|1|Shamrock|7|true|2
+		3|Shade|2|Monstera|10|true|3
+		3|Shade|3|Fern|11|true|3
+		1|Full Sun|4|Purple Heart|8|false|1
+		1|Full Sun|5|Cactus|8|false|1
+
+4.Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+	command: SELECT plants.name, light.light_preference FROM plants JOIN light ON plants.light_preference_id = light.id;
+
+	output: Shamrock|Partly Sunny
+		Monstera|Shade
+		Fern|Shade
+		Purple Heart|Full Sun
+		Cactus|Full Sun
+
+5.Delete an item that meets some condition (you can choose a condition that makes sense).
+	
+	command: DELETE FROM plants WHERE best_zone = 8;
+	
+	output: None, but if I display all the info from plants table you can see that both best_zone of 8 (Purple Heart and Cactus) are gone, here:	
+
+		1|Shamrock|7|true|2
+		2|Monstera|10|true|3
+		3|Fern|11|true|3
+
+************************************* Release 3 ****************************************
+
+1.Try a few different joins in your database, and record the commands and the output in queries.txt. 
+
+A. Inner join: produces the matching set from both tables
+
+Command: SELECT * FROM plants INNER JOIN light ON plants.light_preference_id = light.id;
+ 
+Output: 1|Shamrock|7|true|2|2|Partly Sunny
+	2|Monstera|10|true|3|3|Shade
+	3|Fern|11|true|3|3|Shade
+
+B. Left outer join: produces complete display of first table and if there are matches in the second table it will display them. Where there are no matches it will display null on the right side. (** for better display I updated the ‘Fern’ in the plants table to ‘0’ for the light_preference_id **)
+
+Command: SELECT * FROM plants LEFT OUTER JOIN light ON plants.light_preference_id = light.id;
+
+Output: 1|Shamrock|7|true|2|2|Partly Sunny
+	2|Monstera|10|true|3|3|Shade
+	3|Fern|11|true|0||
+
+C. Left outer join with condition: This only displays the left tables info with the clause you create for the rights side table. So this clause is where the right table is null then display all of the right side info for the null. 
+
+Command:SELECT * FROM plants LEFT OUTER JOIN light ON plants.light_preference_id = light.id WHERE light.light_preference IS null;
+
+Output: 3|Fern|11|true|0||
+
