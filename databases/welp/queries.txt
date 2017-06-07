@@ -14,3 +14,9 @@
 ****output: Grundy Hollow Wedding Chapel|Holly|Berry|Perfect place to get married
 Grundy Hollow Wedding Chapel|Bradford|Pitt|After 6 kids and many years together we are now divorced.... Not the best memories!
 G-Borne's House of Soul|Steven|Wonder|The food is delicious but can't comment on the decor...
+
+3.How do you view the data of all three tables for just one particular business? 
+
+****command: SELECT businesses.name, users.first_name, users.last_name, reviews.comment FROM reviews JOIN businesses ON reviews.business_id = businesses.id JOIN users On reviews.user_id = users.id WHERE reviews.id = 1;
+
+****Output: Grundy Hollow Wedding Chapel|Holly|Berry|Perfect place to get married
