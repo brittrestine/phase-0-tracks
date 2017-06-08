@@ -49,11 +49,11 @@ loop do
             plants = db.execute("UPDATE plants SET scientificname='#{new_scientific_name}' WHERE householdname='#{old_house_hold_name}'")
           end
         end
-=begin
+
         if user_wants == "delete"
-          puts "\nWhat is the name of the plant you want to delete?"
+          puts "\nWhat is the house hold name of the plant you want to delete?"
           delete_name = gets.chomp
-          plants = db.execute("DELETE FROM plants WHERE name='#{delete_name}'")
+          plants = db.execute("DELETE FROM plants WHERE householdname='#{delete_name}'")
           puts "\n**#{delete_name} has been deleted from data.**"
         end
 
@@ -64,7 +64,7 @@ loop do
             puts "\nWhat is the plants scientific name?"
             s_n = gets.chomp
         end
-
+=begin
         if user_wants == "last"
             plants = db.execute("SELECT * FROM plants ORDER BY ID DESC LIMIT 1")
               plants.each do |plant|
@@ -72,7 +72,7 @@ loop do
         end
       end
 =end
-   # create_plant_data(db, h_h_n, s_n)
+    create_plant_data(db, h_h_n, s_n)
 
       break if user_wants == "q"
 
