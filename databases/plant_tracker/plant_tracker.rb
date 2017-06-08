@@ -14,9 +14,7 @@ SQL
 db.execute(create_table_cmd)
 
 def create_plant_data(db, householdname, scientificname)
-  if householdname == nil
-    puts "\n No plants to input."
-  else
+  if householdname == householdname
     db.execute("INSERT INTO plants (householdname, scientificname) VALUES (?, ?)", [householdname, scientificname])
   end
 end
@@ -32,10 +30,10 @@ loop do
       if user_wants == "all"
         plants = db.execute("SELECT * FROM plants")
         plants.each do |plant|
-        puts "\n#{plant['name']} is #{plant['age']}"
+        puts "\n#{plant['householdname']} is #{plant['scientificname']}"
         end
       end
-
+=begin
       if user_wants == "update"
         puts  "\nWhat is the house hold name of the plant you would like to update?"
           old_house_hold_name = gets.chomp
@@ -67,14 +65,14 @@ loop do
             s_n = gets.chomp
         end
 
-        create_plant_data(db, h_h_n, s_n)
-
         if user_wants == "last"
             plants = db.execute("SELECT * FROM plants ORDER BY ID DESC LIMIT 1")
               plants.each do |plant|
-              puts "\n#{plant['name']} is #{plant['age']}"
+              puts "\n#{plant['householdname']} is #{plant['scientificname']}"
         end
       end
+=end
+    create_plant_data(db, h_h_n, s_n)
 
       break if user_wants == "q"
 
