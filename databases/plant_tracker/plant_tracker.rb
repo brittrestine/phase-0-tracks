@@ -78,5 +78,5 @@ loop do
 
       break if user_wants == "q"
 
-      loop_counter +=1
+      loop_counter += 1
 end
