@@ -70,7 +70,7 @@ loop do
         if user_wants == "last"
             plants = db.execute("SELECT * FROM plants ORDER BY ID DESC LIMIT 1")
               plants.each do |plant|
-              puts "\n#{plant['householdname']} is #{plant['scientificname']}"
+              puts "\n#{plant['id']}: #{plant['householdname']} is scientifically known as #{plant['scientificname']}"
         end
       end
 
