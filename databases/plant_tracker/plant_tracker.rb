@@ -30,7 +30,7 @@ loop do
       if user_wants == "all"
         plants = db.execute("SELECT * FROM plants")
         plants.each do |plant|
-        puts "\n#{plant['householdname']} is #{plant['scientificname']}"
+        puts "\n#{plant['id']}: #{plant['householdname']} is scientifically known as #{plant['scientificname']}"
         end
       end
 
@@ -63,16 +63,18 @@ loop do
 
             puts "\nWhat is the plants scientific name?"
             s_n = gets.chomp
+
+            create_plant_data(db, h_h_n, s_n)
         end
-=begin
+
         if user_wants == "last"
             plants = db.execute("SELECT * FROM plants ORDER BY ID DESC LIMIT 1")
               plants.each do |plant|
               puts "\n#{plant['householdname']} is #{plant['scientificname']}"
         end
       end
-=end
-    create_plant_data(db, h_h_n, s_n)
+
+
 
       break if user_wants == "q"
 
