@@ -1,6 +1,6 @@
 require 'sqlite3'
 
-#************** authors table **************
+#************** authors table *************
 
 db = SQLite3::Database.new("author.db")
 db.results_as_hash = true
@@ -36,7 +36,7 @@ loop_counter = 0
 
 loop do
 
-  puts "\nWould you like to look at all of the data, create data, update data or delete data.\n(enter: all, create, update or delete)(q to quit)"
+  puts "\nWould you like to look at all of the data, create data, update data or delete data.\n(enter: all, create, update or delete)(enter:q to quit)"
     user_wants = gets.chomp
 
   if user_wants == "all"
