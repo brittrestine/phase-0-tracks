@@ -1,6 +1,6 @@
 require 'sqlite3'
 
-#*************** authors table **************
+#************** authors table **************
 
 db = SQLite3::Database.new("author.db")
 db.results_as_hash = true
