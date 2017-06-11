@@ -34,12 +34,14 @@ db_2.execute(create_table_cmd_2)
 
 loop_counter = 0
 
+puts "Welcome to my book collection, help me keep track of books and the authors who wrote them!"
+
 loop do
 
-  puts "\nWould you like to look at all of the data, create data, update data or delete data.\n(enter: all, create, update or delete)(enter:q to quit)"
-    user_wants = gets.chomp
+  puts "\nWould you like to look at all of the authors and the books they wrote? Or would you like to input, update or delete an author from the list.\n(enter: all, input, update or delete)(enter:q to quit)"
+    user_wants = gets.chomp.capitalize
 
-  if user_wants == "all"
+  if user_wants == "All"
     books = db_2.execute("SELECT * FROM book")
     authors = db.execute("SELECT * FROM author")
       books.each do |b|
@@ -51,14 +53,14 @@ loop do
       end
   end
 
-  if user_wants == "create"
-    puts "\nWhat is the Authors name?"
-    name_of_author = gets.chomp
+  if user_wants == "Input"
+    puts "\nWhat is the Authors name you would like to input?"
+    name_of_author = gets.chomp.capitalize
 
     db.execute('INSERT INTO author (name_of_author) VALUES (?)',[name_of_author])
 
-    puts "\nWhat is the title of the book?"
-      title = gets.chomp
+    puts "\nWhat is the title of the book they wrote?"
+      title = gets.chomp.capitalize
 
     authors = db.execute("SELECT * FROM author")
     authors.each do |a|
@@ -70,26 +72,26 @@ loop do
     puts "\n**#{name_of_author} is the author of #{title}**"
   end
 
-  if user_wants == "update"
+  if user_wants == "Update"
     puts "\nDo you want to update the authors name or a book title?\n(authors name / book title)"
-      aname_or_btitle = gets.chomp
+      aname_or_btitle = gets.chomp.capitalize
 
-    if aname_or_btitle == "authors name"
-      puts  "\nWhat is the name of the Author you would like to update?"
-        a_name = gets.chomp
-      puts "\nWhat would you like the new authors name to be updated to?"
-        new_a_name = gets.chomp
+    if aname_or_btitle == "Authors name"
+      puts  "\nWhat is the name of the author you would like to update?"
+        a_name = gets.chomp.capitalize
+      puts "\nWhat would you like the authors name to be updated to?"
+        new_a_name = gets.chomp.capitalize
 
       db.execute("UPDATE author SET name_of_author='#{new_a_name}' WHERE name_of_author='#{a_name}'")
 
       puts "\n**You've updated #{a_name} to #{new_a_name}**"
 
-    else aname_or_btitle == "book title"
+    else aname_or_btitle == "Book title"
 
-      puts "\nwhat it the title of the title of the book you want to update?"
-        t_name = gets.chomp
+      puts "\nwhat is the title of the book you want to update?"
+        t_name = gets.chomp.capitalize
       puts "\nWhat is the new title name?"
-        new_tname = gets.chomp
+        new_tname = gets.chomp.capitalize
 
       db_2.execute("UPDATE book SET title='#{new_tname}' WHERE title='#{t_name}'")
 
@@ -97,16 +99,16 @@ loop do
     end
   end
 
-  if user_wants == "delete"
+  if user_wants == "Delete"
     puts "\nWhat book would you like to delete?"
-      delete_name = gets.chomp
+      delete_name = gets.chomp.capitalize
 
     db_2.execute("DELETE FROM book WHERE title='#{delete_name}'")
 
     puts "\n**#{delete_name} has been deleted from data.**"
   end
 
-  break if user_wants == "q"
+  break if user_wants == "Q"
 
   loop_counter += 1
 
