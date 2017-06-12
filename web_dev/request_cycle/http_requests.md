@@ -2,7 +2,8 @@
 
 1.What are some common HTTP status codes?
 
-    There are many different HTTP status codes but some commen ones are:
+    - There are many different HTTP status codes but some commen ones are:
+
       * 200 - 'ok' or successful response.
       * 404 - 'not found' or no longer availabe.
       * 403 - 'forbidden'.
