@@ -15,3 +15,4 @@
     -Post requests can be used for uploading files or customer information.
 
 3.Optional bonus question: What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
+  Cookies are piece of data from a website stored on your computer. It relates to HTTP requests in that when you make a http request you are requesting information from the website and that website can store infromation on your computer for you such as something added into a shopping bag or user info. So when you go back to that site it will remember your specific intfo.
