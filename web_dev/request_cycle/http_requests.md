@@ -4,10 +4,13 @@
 
     - There are many different HTTP status codes but some commen ones are:
 
-      * 200 - 'ok' or successful response.
-      * 404 - 'not found' or no longer availabe.
-      * 403 - 'forbidden'.
-      * 503 - 'service unavailable', this error can happen because of many reason, for example the web page is down for maintenance.
+    * 200 - 'ok' or successful response.
+
+    * 404 - 'not found' or no longer availabe.
+
+    * 403 - 'forbidden'.
+
+    * 503 - 'service unavailable', this error can happen because of many reason, for example the web page is down for maintenance.
 
 2.What is the difference between a GET request and a POST request? When might each be used?
 
