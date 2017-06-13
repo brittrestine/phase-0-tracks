@@ -64,3 +64,10 @@ get '/great_job' do
     "Great job!"
   end
 end
+
+# 3.Create a route that uses route parameters to add two numbers and respond with the result.The data types are tricky here -- when will the data need to be (or arrive as) a string?
+
+get '/adder/:addition' do
+  addition = params[:addition]
+  "The result of the addition is #{eval(addition)}"
+end
