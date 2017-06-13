@@ -1,9 +1,12 @@
 $(document).ready(function() {
-
   $("p").hide();
+  $("#bob-dylan").hide();
 
-  $("h1").click(function() (
-    $(this).next().slideToggle(300);
-    ))
+  $("#see-dylan").click(function() {
+    $("#bob-dylan").fadeIn("slow");
+  });
 
+  $("#learn").click(function() {
+    $("p").show();
+  });
 });
