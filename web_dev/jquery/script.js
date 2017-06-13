@@ -11,12 +11,12 @@ $(document).ready(function() {
   });
 
   $( "li.fav" ).hover(function() {
-    $( this ).append( $( "<span> : MY FAVORITE ALBUM!!! <3 </span>" ) );
+    $( this ).append( $( "<span> : WINNER (THIS IS MY FAVORITE ALBUM!!!) <3 </span>" ) );
   }, function() {
     $( this ).find( "span:last" ).remove()});
 
   $( "li.tied" ).hover(function() {
-    $( this ).append( $( "<span> : MY SECOND FAVORITE ALBUM..... </span>" ) );
+    $( this ).append( $( "<span> : SECOND PLACE (TIED WITH EVERY OTHER ALBUM EXCEPT DESIRE.....) </span>" ) );
   }, function() {
     $( this ).find( "span:last" ).remove()});
 
