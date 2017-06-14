@@ -5,9 +5,9 @@
   * Volt
   * Rack 'n' Alternative
 
-  **Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?**
-    * Mongo
-    *PostgreSQL
+**Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?**
+  * Mongo
+  *PostgreSQL
 
-    **What is meant by the term web stack?**
-      * Web stack is the combination of languages, operating systems, databases and web servers. So everything you use to make a web site.
+**What is meant by the term web stack?**
+  * Web stack is the combination of languages, operating systems, databases and web servers. So everything you use to make a web site.
