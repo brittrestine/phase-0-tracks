@@ -4,6 +4,7 @@ require 'sqlite3'
 
 set :public_folder, File.dirname(__FILE__) + '/static'
 
+
 db = SQLite3::Database.new("students.db")
 db.results_as_hash = true
 
@@ -15,6 +16,17 @@ end
 
 get '/students/new' do
   erb :new_student
+end
+
+get '/students/remove' do
+  erb :remove_student
+end
+
+get '/student/name' do
+  @n = params[:name]
+  @student = db.execute("SELECT * FROM
+    students WHERE name=?", [@n])
+  erb :student_name
 end
 
 # create new students via
